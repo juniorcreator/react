@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import TodoListItem from '../todo-list-item';
 import './todo-list.css';
 
-const TodoList = ({ todos }) => {
-
-  const elements = todos.map((item) => {
+export default class TodoList extends Component {
+  render() {
+    const {todos} = this.props;
+    const elements = todos.map((item) => {
     const { id, ...itemProps } = item;
 
     return (
@@ -20,6 +21,13 @@ const TodoList = ({ todos }) => {
       { elements }
     </ul>
   );
-};
+  }
+}
 
-export default TodoList;
+
+
+
+
+  
+
+
